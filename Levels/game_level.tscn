@@ -18,8 +18,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_glhpp"]
 shader = ExtResource("23_sh88w")
 shader_parameter/speed = 2.5
-shader_parameter/amplitude = 0.01
-shader_parameter/frequency = 0.008
+shader_parameter/amplitude = 0.012
+shader_parameter/frequency = 0.08
 shader_parameter/direction = Vector2(0.9, 0.1)
 shader_parameter/saturation = 1.2
 shader_parameter/brightness = 1.0
@@ -804,6 +804,7 @@ y_sort_enabled = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_jf3ik")]
 z_index = 1
+position = Vector2(232, 222)
 up_direction = Vector2(0, 1)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]

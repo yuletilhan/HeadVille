@@ -1,9 +1,9 @@
 shader_type canvas_item;
 
 // DALGA PARAMETRELERİ
-uniform float speed = 5.0;
-uniform float amplitude = 0.2;
-uniform float frequency = 0.2;
+uniform float speed = 2.5;
+uniform float amplitude = 0.012;
+uniform float frequency = 0.008;
 uniform vec2 direction = vec2(0.9, 0.1); // %90 yatay, %10 dikey
 
 // RENK KONTROLLERİ (YENİ)
