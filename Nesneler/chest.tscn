@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ofgprlfmldq"]
+
+[ext_resource type="Texture2D" uid="uid://p1swrob6i3t2" path="res://Nesneler/sandık.png" id="1_65sb7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rjlls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm63y"]
+size = Vector2(20, 8)
+
+[node name="Chest" type="Sprite2D"]
+position = Vector2(259, 124)
+texture = ExtResource("1_65sb7")
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_rjlls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_rm63y")
