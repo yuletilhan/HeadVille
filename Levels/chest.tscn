@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8ofgprlfmldq"]
+
+[ext_resource type="Texture2D" uid="uid://c71vomqwucesb" path="res://Nesneler/chest1.png" id="1_65sb7"]
+[ext_resource type="Script" uid="uid://cgh0iuy1oeqde" path="res://Levels/chest.gd" id="2_rjlls"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rjlls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm63y"]
+size = Vector2(16, 14)
+
+[sub_resource type="Animation" id="Animation_vya46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_grvvm"]
+resource_name = "chestclose"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_lwltf"]
+resource_name = "chestclose2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_rjlls"]
+resource_name = "chestopen"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 4]
+}
+
+[sub_resource type="Animation" id="Animation_vsl3x"]
+resource_name = "chestopen2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l3ht"]
+_data = {
+&"RESET": SubResource("Animation_vya46"),
+&"chestclose": SubResource("Animation_grvvm"),
+&"chestclose2": SubResource("Animation_lwltf"),
+&"chestopen": SubResource("Animation_rjlls"),
+&"chestopen2": SubResource("Animation_vsl3x")
+}
+
+[node name="Chest" type="Sprite2D"]
+texture = ExtResource("1_65sb7")
+hframes = 5
+vframes = 2
+script = ExtResource("2_rjlls")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_rjlls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_rm63y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8l3ht")
+}
