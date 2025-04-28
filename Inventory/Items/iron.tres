@@ -7,4 +7,5 @@
 script = ExtResource("1_0lubv")
 name = "iron"
 texture = ExtResource("2_7kw0i")
+maxAmountPerStack = 99
 metadata/_custom_type_script = "uid://dthkb4gumj1dy"
