@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlhiyo5wogdgu"]
+
+[ext_resource type="Texture2D" uid="uid://oms82bjpo0py" path="res://Assets/icons/gold.png" id="1_0m4do"]
+[ext_resource type="PackedScene" uid="uid://63805qkqanc5" path="res://Collectible/collectible.tscn" id="1_a8kuj"]
+[ext_resource type="Resource" uid="uid://co02wtjlk2cko" path="res://Inventory/Items/gold.tres" id="2_4sucw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4sucw"]
+radius = 6.0
+
+[node name="Gold" instance=ExtResource("1_a8kuj")]
+itemRes = ExtResource("2_4sucw")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_4sucw")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("1_0m4do")

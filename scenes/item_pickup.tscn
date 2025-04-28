@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://sqq161c6cc1i"]
 
-[ext_resource type="Script" uid="uid://b5ouqe4mx7tmb" path="res://item_pickup.gd" id="1_lgqak"]
+[ext_resource type="Script" uid="uid://b5ouqe4mx7tmb" path="res://Scripts/item_pickup.gd" id="1_bbo16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgqak"]
 size = Vector2(10, 10)
@@ -9,7 +9,7 @@ size = Vector2(10, 10)
 size = Vector2(10, 10)
 
 [node name="item_pickup" type="Node2D"]
-script = ExtResource("1_lgqak")
+script = ExtResource("1_bbo16")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://g32nadqg5fud"]
+
+[ext_resource type="Texture2D" uid="uid://cgt8bslekh7ue" path="res://Assets/icons/coal.png" id="1_ijlje"]
+[ext_resource type="PackedScene" uid="uid://63805qkqanc5" path="res://Collectible/collectible.tscn" id="1_in1u3"]
+[ext_resource type="Resource" uid="uid://jnmsnn306ha6" path="res://Inventory/Items/coal.tres" id="2_ivrbw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_in1u3"]
+radius = 6.0208
+
+[node name="Coal" instance=ExtResource("1_in1u3")]
+itemRes = ExtResource("2_ivrbw")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_in1u3")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("1_ijlje")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://jyrvxw7lfbxn"]
+
+[ext_resource type="Texture2D" uid="uid://bu751b5npi88h" path="res://Assets/icons/copper.png" id="1_6qdw3"]
+[ext_resource type="PackedScene" uid="uid://63805qkqanc5" path="res://Collectible/collectible.tscn" id="1_pg5bt"]
+[ext_resource type="Resource" uid="uid://5r3ptufexqxn" path="res://Inventory/Items/copper.tres" id="2_p10yo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p10yo"]
+radius = 6.0
+
+[node name="Copper" instance=ExtResource("1_pg5bt")]
+itemRes = ExtResource("2_p10yo")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_p10yo")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("1_6qdw3")

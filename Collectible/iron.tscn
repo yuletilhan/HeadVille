@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://drai2nm1dn8s4"]
+
+[ext_resource type="Texture2D" uid="uid://da6f7f07f1m64" path="res://Assets/icons/iron.png" id="1_754ll"]
+[ext_resource type="PackedScene" uid="uid://63805qkqanc5" path="res://Collectible/collectible.tscn" id="1_winyi"]
+[ext_resource type="Resource" uid="uid://13ae6pfd1lhb" path="res://Inventory/Items/iron.tres" id="2_kac7l"]
+
+[node name="Iron" instance=ExtResource("1_winyi")]
+itemRes = ExtResource("2_kac7l")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("1_754ll")
