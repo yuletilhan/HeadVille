@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://sna4c8i81ykw"]
 
-[ext_resource type="Script" uid="uid://dy3p7y5v82bjx" path="res://enemy.gd" id="1_thkda"]
+[ext_resource type="Script" uid="uid://dy3p7y5v82bjx" path="res://Scripts/enemy.gd" id="1_thkda"]
 [ext_resource type="Texture2D" uid="uid://dnmnyol0ebkxx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="2_qqhbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nee3u"]

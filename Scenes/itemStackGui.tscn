@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4tek8dpadvqk"]
+
+[ext_resource type="Script" uid="uid://cfbbp7ydwjdbx" path="res://Scenes/item_stack_gui.gd" id="1_872fg"]
+[ext_resource type="FontFile" uid="uid://cya4fjvin48h0" path="res://Assets/Fonts/Tuffy-Bold.ttf" id="1_admxc"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_872fg")
+
+[node name="item" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(11, 14)
+layout_mode = 0
+offset_right = 11.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.799798, 0.95181, 1, 1)
+theme_override_fonts/font = ExtResource("1_admxc")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 2

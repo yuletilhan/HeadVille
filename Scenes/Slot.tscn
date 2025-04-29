@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw76ltwut4bpw"]
+[gd_scene load_steps=3 format=3 uid="uid://cw76ltwut4bpw"]
 
 [ext_resource type="Script" uid="uid://iklasc0iojei" path="res://Scripts/slot.gd" id="1_m4o0w"]
 [ext_resource type="Texture2D" uid="uid://d07umaos6qgcs" path="res://Assets/UI/inventorySlot.png" id="2_fjpa2"]
-[ext_resource type="FontFile" uid="uid://cya4fjvin48h0" path="res://Assets/Fonts/Tuffy-Bold.ttf" id="3_ncnge"]
 
-[node name="Slot" type="Panel"]
+[node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(16, 16)
 offset_right = 40.0
@@ -21,18 +20,3 @@ custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
-
-[node name="Panel" type="Panel" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="icon" type="Sprite2D" parent="CenterContainer/Panel"]
-
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
-custom_minimum_size = Vector2(11, 14)
-layout_mode = 0
-offset_right = 11.0
-offset_bottom = 14.0
-theme_override_colors/font_color = Color(0.799798, 0.95181, 1, 1)
-theme_override_fonts/font = ExtResource("3_ncnge")
-theme_override_font_sizes/font_size = 8
-horizontal_alignment = 2

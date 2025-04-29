@@ -1,25 +1,62 @@
+# Envanter verilerini yöneten temel sınıf
 extends Resource
 class_name Inventory
 
+# Envanter güncellendiğinde tetiklenen sinyal
 signal updated
 
+# Envanter slotlarını tutan dizi (Inspector'dan ayarlanabilir)
 @export var slots: Array[InventorySlot]
 
+# Envantere yeni öğe ekleme fonksiyonu
 func insert(item: InventoryItem):
-    # Aynı item'ı taşıyan slotları bul
-    var item_slots = slots.filter(func(slot): return slot.item == item and slot.amount < item.maxAmountPerStack)
+    # 1. ÖNCE AYNI TÜRDEN VE DOLU OLMAYAN SLOTLARA BAK
+    var dolu_olmayan_slotlar = slots.filter(
+        func(slot): 
+            # Aynı öğe tipinde ve maksimum miktara ulaşmamış slotları filtrele
+            return slot.item == item and slot.amount < item.maxAmountPerStack
+    )
     
-    if !item_slots.is_empty():
-        # Bulunan ilk uygun slota ekle
-        item_slots[0].amount += 1
+    # Eğer uygun slot bulunduysa
+    if not dolu_olmayan_slotlar.is_empty():
+        # Bulunan ilk uygun slota 1 adet ekle
+        dolu_olmayan_slotlar[0].amount += 1
+    
+    # 2. BOŞ SLOT ARA
     else:
-        # Boş slot bul
-        var empty_slots = slots.filter(func(slot): return slot.item == null)
-        if !empty_slots.is_empty():
-            empty_slots[0].item = item
-            empty_slots[0].amount = 1
+        var bos_slotlar = slots.filter(
+            func(slot): 
+                # Tamamen boş olan slotları filtrele
+                return slot.item == null
+        )
+        
+        if not bos_slotlar.is_empty():
+            # Boş slota yeni öğe yerleştir
+            bos_slotlar[0].item = item
+            bos_slotlar[0].amount = 1
+        
+        # 3. YER YOKSA UYARI VER
         else:
-            # Eğer boş slot da yoksa, item eklenemez
-            print("Inventory is full!")
+            print("Hata: Envanter dolu! Yeni öğe eklenemedi: ", item.name)
     
+    # Değişiklikleri bildir
     updated.emit()
+
+# Belirli bir slotu kaldırma fonksiyonu
+func removeSlot(inventorySlot: InventorySlot):
+    # Slotun listedeki konumunu bul
+    var slot_index = slots.find(inventorySlot)
+    
+    # Eğer slot bulunamazsa çık
+    if slot_index < 0:
+        return
+    
+    # Slotu sıfırla (yeni boş slot oluştur)
+    slots[slot_index] = InventorySlot.new()
+    # Not: Burada sinyal gönderilmiyor!
+
+# Belirli pozisyona slot ekleme fonksiyonu
+func insertSlot(index: int, inventorySlot: InventorySlot):
+    # Verilen konumdaki slotu güncelle
+    slots[index] = inventorySlot
+    # Not: Burada da sinyal gönderilmiyor!
