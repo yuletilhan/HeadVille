@@ -53,10 +53,10 @@ func removeSlot(inventorySlot: InventorySlot):
     
     # Slotu sıfırla (yeni boş slot oluştur)
     slots[slot_index] = InventorySlot.new()
-    # Not: Burada sinyal gönderilmiyor!
+    updated.emit()
 
 # Belirli pozisyona slot ekleme fonksiyonu
 func insertSlot(index: int, inventorySlot: InventorySlot):
     # Verilen konumdaki slotu güncelle
     slots[index] = inventorySlot
-    # Not: Burada da sinyal gönderilmiyor!
+    updated.emit()

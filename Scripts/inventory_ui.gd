@@ -140,7 +140,7 @@ func _input(event):
     if event.is_action_pressed("right_click") && itemInHand:
         putItemBack()
         
-        # DEBUG
+        # Debug için mouse eventlerini yazdır
     if event is InputEventMouseButton:
         print("Mouse Event: ", event)
         print("Button Index: ", event.button_index)

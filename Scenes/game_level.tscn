@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dwgs14pwhyfwq"]
+[gd_scene load_steps=45 format=4 uid="uid://dwgs14pwhyfwq"]
 
 [ext_resource type="Script" uid="uid://b5sodsc4tjf68" path="res://Scripts/game_level.gd" id="1_6tkkn"]
 [ext_resource type="Texture2D" uid="uid://b0and6vufdw8x" path="res://Assets/Objeler/Art.png" id="4_2lq5e"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://sna4c8i81ykw" path="res://Karakterler/enemy.tscn" id="22_bftu2"]
 [ext_resource type="Shader" uid="uid://dcrhifo6ycrr6" path="res://Scenes/game_level.gdshader" id="23_sh88w"]
 [ext_resource type="Texture2D" uid="uid://cybnari7fagd2" path="res://Assets/Objeler/deniz.png" id="25_wri67"]
+[ext_resource type="PackedScene" uid="uid://c3dddav6i3p1" path="res://Scenes/hotbar.tscn" id="26_aphk7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_glhpp"]
 shader = ExtResource("23_sh88w")
@@ -1021,6 +1022,17 @@ position = Vector2(104, -21)
 process_mode = 3
 script = ExtResource("20_2lq5e")
 
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("26_aphk7")]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = 232.0
+offset_right = 190.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("19_6tkkn")]
 offset_top = 180.0
 offset_bottom = 180.0
@@ -1028,47 +1040,5 @@ offset_bottom = 180.0
 [node name="Enemy" parent="." instance=ExtResource("22_bftu2")]
 position = Vector2(-74, 20)
 
-[connection signal="body_entered" from="Ground/Collectibles/Coal" to="Ground/Collectibles/Coal" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64456" to="Ground/Collectibles/@Area2D@64456" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64457" to="Ground/Collectibles/@Area2D@64457" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64458" to="Ground/Collectibles/@Area2D@64458" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/Gold" to="Ground/Collectibles/Gold" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64459" to="Ground/Collectibles/@Area2D@64459" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64460" to="Ground/Collectibles/@Area2D@64460" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/Iron" to="Ground/Collectibles/Iron" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64461" to="Ground/Collectibles/@Area2D@64461" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64462" to="Ground/Collectibles/@Area2D@64462" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64463" to="Ground/Collectibles/@Area2D@64463" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/Stone" to="Ground/Collectibles/Stone" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64464" to="Ground/Collectibles/@Area2D@64464" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64465" to="Ground/Collectibles/@Area2D@64465" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64466" to="Ground/Collectibles/@Area2D@64466" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64467" to="Ground/Collectibles/@Area2D@64467" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/wood" to="Ground/Collectibles/wood" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64468" to="Ground/Collectibles/@Area2D@64468" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64469" to="Ground/Collectibles/@Area2D@64469" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64470" to="Ground/Collectibles/@Area2D@64470" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64471" to="Ground/Collectibles/@Area2D@64471" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64472" to="Ground/Collectibles/@Area2D@64472" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64473" to="Ground/Collectibles/@Area2D@64473" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64474" to="Ground/Collectibles/@Area2D@64474" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64475" to="Ground/Collectibles/@Area2D@64475" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64476" to="Ground/Collectibles/@Area2D@64476" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64477" to="Ground/Collectibles/@Area2D@64477" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64478" to="Ground/Collectibles/@Area2D@64478" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64479" to="Ground/Collectibles/@Area2D@64479" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/Copper" to="Ground/Collectibles/Copper" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64480" to="Ground/Collectibles/@Area2D@64480" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64481" to="Ground/Collectibles/@Area2D@64481" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64482" to="Ground/Collectibles/@Area2D@64482" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64483" to="Ground/Collectibles/@Area2D@64483" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64484" to="Ground/Collectibles/@Area2D@64484" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64485" to="Ground/Collectibles/@Area2D@64485" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64486" to="Ground/Collectibles/@Area2D@64486" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64487" to="Ground/Collectibles/@Area2D@64487" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64488" to="Ground/Collectibles/@Area2D@64488" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64489" to="Ground/Collectibles/@Area2D@64489" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64490" to="Ground/Collectibles/@Area2D@64490" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground/Collectibles/@Area2D@64491" to="Ground/Collectibles/@Area2D@64491" method="_on_body_entered"]
 [connection signal="closed" from="CanvasLayer/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGui" to="." method="_on_inventory_gui_opened"]
